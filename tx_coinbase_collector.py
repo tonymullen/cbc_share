@@ -1,5 +1,3 @@
-# Contains hard-coded secrets. Do not put in public version control
-
 from dotenv import load_dotenv
 from pathlib import Path
 from bitcoinrpc.authproxy import AuthServiceProxy, JSONRPCException
