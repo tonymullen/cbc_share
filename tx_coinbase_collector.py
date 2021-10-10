@@ -153,8 +153,7 @@ def main(start_block, skip=1):
     block_record = Path('blocks_completed_'+str(os.getpid())+'.txt')
     block_record.touch(exist_ok=True)
     f = open(block_record, "r+")
-    
-    return
+
     blockchain_height = rpc_con.getblockcount()
     print(blockchain_height)
     for h in range(start_block, blockchain_height+1, skip):
@@ -175,6 +174,6 @@ def main(start_block, skip=1):
         f.truncate()
 
 if __name__=="__main__":
-    main(*sys.argv[1:])
+    main(*[int(arg) for arg in sys.argv[1:]])
 
 
